@@ -1,0 +1,35 @@
+{
+  "name": "wb",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write ./**/*.{ts,tsx,scss,css,json} --config ./.prettierrc",
+    "prepare": "husky install",
+    "fe": "pnpm --filter wb-fe",
+    "shared-ui": "pnpm --filter shared-ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": "pnpm lint",
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
+    "syncpack": "^12.3.0"
+  }
+}
