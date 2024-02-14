@@ -1,0 +1,14 @@
+{
+  "extends": "@wb/typescript-config/react.json",
+  "include": [
+    "vite.config.js",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "tailwind.config.ts",
+    "postcss.config.cjs",
+    "../../packages/ui/src/components/title.tsx",
+  ],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+}

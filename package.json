@@ -2,13 +2,13 @@
   "name": "wb",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write ./**/*.{ts,tsx,scss,css,json} --config ./.prettierrc",
+    "format": "prettier --write ./**/*.{ts,tsx,css,json} --config ./.prettierrc",
     "prepare": "husky install",
-    "fe": "pnpm --filter wb-fe",
-    "shared-ui": "pnpm --filter shared-ui"
+    "fe-user": "pnpm --filter fe-user",
+    "ui": "pnpm --filter ui"
   },
   "keywords": [],
   "author": "",
@@ -17,19 +17,56 @@
     "**/*.{js,ts,tsx}": "pnpm lint",
     "**/*": "prettier --write --ignore-unknown"
   },
+  "engines": {
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">=6.0.0"
+  },
   "devDependencies": {
+    "@wb/typescript-config": "workspace:*",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
+    "@types/node": "^20.10.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.11.2",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "eslint": "^8.56.0",
-    "syncpack": "^12.3.0"
+    "install": "^0.13.0",
+    "syncpack": "^12.3.0",
+    "@hookform/resolvers": "^3.3.2",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-aspect-ratio": "^1.0.3",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-context-menu": "^2.1.5",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-menubar": "^1.0.4",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-radio-group": "^1.1.3",
+    "@radix-ui/react-scroll-area": "^1.0.5",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-toggle": "^1.0.3",
+    "@radix-ui/react-toggle-group": "^1.0.4",
+    "@radix-ui/react-tooltip": "^1.0.7"
   }
 }

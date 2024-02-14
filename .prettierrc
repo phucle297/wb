@@ -9,4 +9,3 @@
   "plugins": ["prettier-plugin-tailwindcss"],
   "endOfLine": "lf"
 }
-
