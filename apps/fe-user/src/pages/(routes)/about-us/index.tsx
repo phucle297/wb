@@ -1,4 +1,4 @@
-import Banner from "../../../components/banner";
+import Banner from "@fe-user/components/banner";
 import AboutOurWebsite from "./components/about-our-website";
 import Members from "./components/members";
 import SupportUs from "./components/support-us";

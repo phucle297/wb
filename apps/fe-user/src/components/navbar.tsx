@@ -4,9 +4,8 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { default as Logo } from "../assets/logo.png";
-import { useTheme } from "@ui/providers/theme-provider";
 import { nestedLinkSchema, TLink } from "@wb/common/src/types/links";
+import { default as Logo } from "../assets/logo.png";
 
 import ThemeColors from "@ui/components/theme-colors";
 import ThemeToggle from "@ui/components/theme-toggle";
@@ -16,28 +15,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@ui/components/ui/dropdown-menu";
-import { NavBarLinks } from "../configs/nav-bar";
-import { useViewPortSize } from "../hooks/useViewPortSize";
-import { PATH } from "../configs/path";
 import { Button } from "@wb/ui/src/components/ui/button";
+import { NavBarLinks } from "../configs/nav-bar";
+import { PATH } from "../configs/path";
+import { useCheckDarkMode } from "../hooks/useCheckDarkMode";
+import { useViewPortSize } from "../hooks/useViewPortSize";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme();
   const { width } = useViewPortSize();
   const [openMenu, setOpenMenu] = useState(false);
-  const checkDarkMode = () => {
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      return systemTheme === "dark";
-    }
-    return theme === "dark";
-  };
-
+  const isDarkMode = useCheckDarkMode();
   return (
     <div className="container mx-auto flex h-full flex-1 items-center justify-between gap-x-2 px-4">
       <Link className="flex h-1/2 cursor-pointer items-center space-x-4" to={PATH.HOME}>
-        <h1 className={clsx("h-full text-2xl font-semibold", { invert: checkDarkMode() })}>
+        <h1 className={clsx("h-full text-2xl font-semibold", { invert: isDarkMode })}>
           <img alt="logo" className="h-full" src={Logo} />
         </h1>
       </Link>

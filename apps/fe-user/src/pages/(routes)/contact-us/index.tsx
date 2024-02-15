@@ -1,4 +1,4 @@
-import Banner from "../../../components/banner";
+import Banner from "@fe-user/components/banner";
 
 import Title from "@ui/components/title";
 

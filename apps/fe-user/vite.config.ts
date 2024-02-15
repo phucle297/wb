@@ -9,6 +9,7 @@ export default defineConfig({
       "@ui": resolve(__dirname, "../../packages/ui/src"),
       "@wb/ui/src": resolve(__dirname, "../../packages/ui/src"),
       "@wb/common": resolve(__dirname, "../../packages/common"),
+      "@fe-user": resolve(__dirname, "../../apps/fe-user/src"),
     },
   },
 });

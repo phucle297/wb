@@ -1,6 +1,6 @@
 import Title from "@ui/components/title";
 
-import { default as PerMees } from "../../../../assets/permees.jpg";
+import { default as PerMees } from "@fe-user/assets/permees.jpg";
 
 const Members = () => {
   return (

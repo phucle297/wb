@@ -1,20 +1,29 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { ChevronRight } from "lucide-react";
 import { FC } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-import { default as LogoFullRounded } from "../assets/logo-full-rounded.png";
+import { default as Logo } from "../assets/logo.png";
+
 import { CATEGORIES, categoriesSchema } from "@wb/common/src/types/categories";
 
 import ButtonDonate from "./button-donate";
 import { getRandomItemsInArray } from "../libs/random-items";
+import { PATH } from "../configs/path";
+import clsx from "clsx";
+import { useCheckDarkMode } from "../hooks/useCheckDarkMode";
 
 const Footer: FC = () => {
+  const isDarkMode = useCheckDarkMode();
   return (
     <div className="w-full border-t-2 bg-[hsl(var(--background))]">
       <div className="container mx-auto grid gap-5 py-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col items-center justify-center">
-          <img alt="logo" className="w-1/2 max-w-full" src={LogoFullRounded} />
+          <Link className="flex w-1/2 cursor-pointer items-center space-x-4 " to={PATH.HOME}>
+            <h1 className={clsx("h-full text-2xl font-semibold", { invert: isDarkMode })}>
+              <img alt="logo" className="h-full" src={Logo} />
+            </h1>
+          </Link>
         </div>
         <div className="">
           <h3 className="mb-2 text-xl font-bold">Recent Blogs</h3>

@@ -8,8 +8,8 @@ import ContactUs from "../(routes)/contact-us";
 import Donate from "../(routes)/donate";
 import Home from "../(routes)/home";
 import ShortReviews from "../(routes)/short-reviews";
-import Layout from "../../components/layout";
-import { PATH } from "../../configs/path";
+import Layout from "@fe-user/components/layout";
+import { PATH } from "@fe-user/configs/path";
 
 export const router = createBrowserRouter([
   {

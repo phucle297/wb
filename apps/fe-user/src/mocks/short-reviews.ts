@@ -1,4 +1,4 @@
-import { TShortReview } from "@/types/short-review";
+import { TShortReview } from "@wb/common/src/types/short-review";
 
 export const ShortReviewsMockData: TShortReview[] = [
   {

@@ -1,8 +1,8 @@
 import { DotIcon } from "lucide-react";
 
-import { default as Momo } from "../../../../assets/momo.jpg";
-import { default as Vcb } from "../../../../assets/vcb.jpg";
-import ButtonDonate from "../../../../components/button-donate";
+import { default as Momo } from "@fe-user/assets/momo.jpg";
+import { default as Vcb } from "@fe-user/assets/vcb.jpg";
+import ButtonDonate from "@fe-user/components/button-donate";
 
 const Content = () => {
   return (

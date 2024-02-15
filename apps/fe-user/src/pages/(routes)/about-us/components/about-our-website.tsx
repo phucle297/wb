@@ -1,4 +1,4 @@
-import { default as BgAbout } from "../../../../assets/bg-about.jpg";
+import { default as BgAbout } from "@fe-user/assets/bg-about.jpg";
 import Title from "@ui/components/title";
 
 const AboutOurWebsite = () => {

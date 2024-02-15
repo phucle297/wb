@@ -12,7 +12,7 @@ import { ArrowDown01, ArrowDownAZ, ArrowDownUp, ArrowUp01, ArrowUpAZ } from "luc
 import { ChangeEvent, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { default as PerMees } from "../../../../../assets/permees.jpg";
+import { default as PerMees } from "@fe-user/assets/permees.jpg";
 import { TCategories } from "@wb/common/src/types/categories";
 import { TShortReview } from "@wb/common/src/types/short-review";
 import { TTypes } from "@wb/common/src/types/types";
@@ -25,7 +25,7 @@ import {
   getNewDataFilterCategories,
   getNewDataFilterSearchAndType,
 } from "./table-review.helper";
-import { ShortReviewsMockData } from "../../../../../mocks/short-reviews";
+import { ShortReviewsMockData } from "@fe-user/mocks/short-reviews";
 
 export const useTableReview = () => {
   const [searchParams, setSearchParams] = useSearchParams();

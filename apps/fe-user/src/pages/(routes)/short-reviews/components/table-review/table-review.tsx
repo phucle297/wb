@@ -6,7 +6,7 @@ import { ScrollArea } from "@ui/components/ui/scroll-area";
 import Categories from "../categories";
 import Types from "../types";
 import { useTableReview } from "./table-review-hook";
-import { optionsCategories, optionsTypes } from "../../../../../constant/multi-select";
+import { optionsCategories, optionsTypes } from "@fe-user/constant/multi-select";
 
 export interface IOptionTypes {
   label: string;

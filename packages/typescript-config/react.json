@@ -14,7 +14,8 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "paths": {
-      "@ui/*": ["../../packages/ui/src/*"]
+      "@ui/*": ["../../packages/ui/src/*"],
+      "@fe-user/*": ["../../apps/fe-user/src/*"]
     }
   }
 }
