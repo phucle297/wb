@@ -25,13 +25,12 @@ const MultiSelect = ({ options, onChange, valueRenderer, placeholder, keyParam }
 
   useEffect(() => {
     const value = searchParams.get(keyParam || "");
-    if (value) {
+    if (value && selected !== value.split(",").map((item) => ({ label: item, value: item }))) {
       const selected = value.split(",").map((item) => ({ label: item, value: item }));
       setSelected(selected);
       onChange?.(selected);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [searchParams.get(keyParam || "")]);
   return (
     <div className="mb-2 w-full md:w-[250px]">
       <ReactMultiSelect

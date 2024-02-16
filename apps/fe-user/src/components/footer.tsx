@@ -67,14 +67,14 @@ const Footer: FC = () => {
                   category !== categoriesSchema.enum.incest &&
                   category !== categoriesSchema.enum.loli
               ),
-              6
+              4
             ).map((category: string) => (
               <div key={category} className="flex items-center gap-2">
                 <ChevronRight className="text-[hsl(var(--primary))]" size={16} />
 
                 <NavLink
                   className="transition-all duration-300 hover:opacity-80"
-                  to={"/short-review?categories=" + category}
+                  to={"/short-reviews?categories=" + category}
                 >
                   <span>
                     {category[0].toUpperCase()}

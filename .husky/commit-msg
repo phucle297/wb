@@ -1,8 +1,4 @@
 #!/usr/bin/env sh
-if [ -n "$CI" ]; then
-  exit 0
-fi
-
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+npx --no -- commitlint --edit "$1"
