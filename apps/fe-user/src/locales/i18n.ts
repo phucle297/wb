@@ -2,7 +2,7 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import { TTranslationKeys } from "@/types/translation";
+import { TTranslationKeys } from "@wb/common/src/types/translation";
 
 import en from "./en.json";
 import vi from "./vi.json";
