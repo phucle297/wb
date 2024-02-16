@@ -12,7 +12,7 @@ const Layout = () => {
 
       <Header />
 
-      <main className="relative z-10 mt-[56px]">
+      <main className="relative z-10 mt-[56px] min-h-[calc(100dvh_-_56px_-_276px)]">
         <Outlet />
       </main>
 

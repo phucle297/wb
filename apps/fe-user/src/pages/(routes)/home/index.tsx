@@ -1,5 +1,6 @@
 import Carousel from "@fe-user/components/carousel";
 import ListBlogs from "@fe-user/components/list-blogs";
+import { BlogsMockData } from "@fe-user/mocks/blogs";
 import { nanoid } from "@reduxjs/toolkit";
 
 const renderDataInCarousel = () => {
@@ -29,7 +30,7 @@ const Home = () => {
     <div className="relative z-10">
       <div className="min-h-screen">
         <Carousel data={renderDataInCarousel()} />
-        <ListBlogs />
+        <ListBlogs data={BlogsMockData} />
       </div>
     </div>
   );
