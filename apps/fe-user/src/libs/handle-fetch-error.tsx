@@ -3,7 +3,7 @@ import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import status from "statuses";
 import { ZodError } from "zod";
 
-import { isErrorWithMessageWithCode, isFetchBaseQueryError } from "@/redux/error-handler/error-helpers";
+import { isErrorWithMessageWithCode, isFetchBaseQueryError } from "@fe-user/redux/error-handler/error-helpers";
 
 export function handleFetchError(error: FetchBaseQueryError | SerializedError | undefined) {
   if (!error) {

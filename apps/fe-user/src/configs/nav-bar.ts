@@ -1,4 +1,4 @@
-import { TLink } from "@/types/links";
+import { TLink } from "@wb/common/src/types/links";
 
 import { PATH } from "./path";
 

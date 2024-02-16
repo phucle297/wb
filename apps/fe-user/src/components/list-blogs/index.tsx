@@ -1,4 +1,3 @@
-import { BlogsMockData } from "@fe-user/mocks/blogs";
 import Title from "@wb/ui/src/components/title";
 import BlogItem from "./components/blog-item";
 import { Button } from "@wb/ui/src/components/ui/button";
