@@ -13,6 +13,7 @@ export const blogSchema = z.object({
   thumbnail: z.string(),
   comments: z.array(commentSchema).nullish(),
   tags: z.array(z.string()).nullish(),
+  description: z.string().nullish(),
 });
 export type TComment = z.infer<typeof commentSchema>;
 export type TBlog = z.infer<typeof blogSchema>;

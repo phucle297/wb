@@ -1,11 +1,11 @@
 import Banner from "@fe-user/components/banner";
-
+import { default as ContactUsImg } from "@fe-user/assets/contact-us.jpeg";
 import Title from "@ui/components/title";
 
 const ContactUs = () => {
   return (
     <div>
-      <Banner subtitle="Feedback? Questions? Let Us Know!" title="CONTACT US" />
+      <Banner subtitle="Feedback? Questions? Let Us Know!" title="CONTACT US" img={ContactUsImg} grayscale />
 
       <div className="container h-72 py-10">
         <Title linePosition="center" text="GET IN TOUCH" textPosition="center" />
