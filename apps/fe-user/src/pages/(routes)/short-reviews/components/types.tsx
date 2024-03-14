@@ -3,12 +3,14 @@ import clsx from "clsx";
 import { Badge } from "@ui/components/ui/badge";
 import { TBadgeColor } from "@wb/common/src/types/colors";
 import { typesSchema } from "@wb/common/src/types/types";
+import { cn } from "@wb/ui/src/libs/utils";
 
 type Props = {
   types: string[];
+  className?: string;
 };
 
-const Types = ({ types }: Props) => {
+const Types = ({ types, className }: Props) => {
   const getVariant = (type: string) => {
     let variant: TBadgeColor;
     switch (type) {
@@ -34,7 +36,7 @@ const Types = ({ types }: Props) => {
     return variant;
   };
   return (
-    <div className="flex flex-row space-x-2">
+    <div className={cn("flex flex-row flex-wrap gap-2")}>
       {types.map((item) => {
         const type = item.toLocaleLowerCase().trim().replaceAll(" ", "_");
         const variant = getVariant(type);

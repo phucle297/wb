@@ -12,15 +12,15 @@ const BlogItem = ({ blog }: Props) => {
 
   return (
     <div
-      className="grid cursor-pointer grid-cols-[250px_1fr] items-center gap-5 rounded-lg border-2 bg-[hsl(var(--popover))] "
+      className="grid cursor-pointer grid-cols-1 items-center overflow-hidden rounded-lg border-2 bg-[hsl(var(--popover))] lg:grid-cols-[250px_1fr]"
       aria-hidden
       onClick={() => {
         navigate(`/blogs/${blog._id}`);
       }}
     >
-      <img src={blog.thumbnail} alt="thumbnail" className="block h-48 w-[250px]" />
+      <img src={blog.thumbnail} alt="thumbnail" className="block  h-full w-full object-cover" />
 
-      <div>
+      <div className="p-4">
         <h3 className="mb-1.5 text-2xl font-bold">{blog.title}</h3>
         <p className="mb-2 text-sm leading-4 opacity-70">{blog.description}</p>
         <Types types={blog.tags as string[]} />

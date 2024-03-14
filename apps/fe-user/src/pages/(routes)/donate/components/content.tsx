@@ -37,7 +37,7 @@ const Content = () => {
       <p>
         Đối với các bạn ở Việt Nam, các bạn có thể chuyển khoản cho tài khoản{" "}
         <span className="text-[hsl(var(--primary))]">0905856910</span> tại Momo hoặc{" "}
-        <span className="text-[hsl(var(--primary))]">0041000374379</span> tại ngân hàng VietcomBank với nọi dung
+        <span className="text-[hsl(var(--primary))]">0041000374379</span> tại ngân hàng VietcomBank với nội dung
         &quot;Ung ho Weeboo Time + ho ten + so dien thoai/email&quot;
       </p>
       <div className="my-5 flex gap-10">
