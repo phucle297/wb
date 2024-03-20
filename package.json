@@ -8,6 +8,7 @@
     "format": "prettier --write ./**/*.{ts,tsx,css,json} --config ./.prettierrc",
     "prepare": "husky install",
     "fe-user": "pnpm --filter fe-user",
+    "be": "pnpm --filter be",
     "ui": "pnpm --filter ui"
   },
   "keywords": [],
