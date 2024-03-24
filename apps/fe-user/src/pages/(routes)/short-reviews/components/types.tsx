@@ -4,13 +4,15 @@ import { Badge } from "@ui/components/ui/badge";
 import { TBadgeColor } from "@wb/common/src/types/colors";
 import { typesSchema } from "@wb/common/src/types/types";
 import { cn } from "@wb/ui/src/libs/utils";
+import { ScrollArea } from "@wb/ui/src/components/ui/scroll-area";
 
 type Props = {
   types: string[];
   className?: string;
+  noWrap?: boolean;
 };
 
-const Types = ({ types, className }: Props) => {
+const Types = ({ types, className, noWrap }: Props) => {
   const getVariant = (type: string) => {
     let variant: TBadgeColor;
     switch (type) {
@@ -36,7 +38,7 @@ const Types = ({ types, className }: Props) => {
     return variant;
   };
   return (
-    <div className={cn("flex flex-row flex-wrap gap-2")}>
+    <div className={cn("flex w-[200px] flex-row gap-2", className, !noWrap && "flex-wrap")}>
       {types.map((item) => {
         const type = item.toLocaleLowerCase().trim().replaceAll(" ", "_");
         const variant = getVariant(type);

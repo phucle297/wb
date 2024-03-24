@@ -1,10 +1,15 @@
-import { Outlet } from "react-router-dom";
-import NavigationProgress from "@ui/components/navigation-progress";
 import DotsGridBg from "@ui/components/dots-grid-bg";
+import NavigationProgress from "@ui/components/navigation-progress";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../footer";
 import Header from "../header";
+import { useEffect } from "react";
 
 const Layout = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div>
       <NavigationProgress className="absolute inset-x-0 bottom-0 translate-y-1" />

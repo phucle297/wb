@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Badge } from "@ui/components/ui/badge";
 import { categoriesSchema } from "@wb/common/src/types/categories";
 import { TBadgeColor } from "@wb/common/src/types/colors";
+import { cn } from "@wb/ui/src/libs/utils";
 
 type Props = {
   categories: string[];
@@ -108,7 +109,7 @@ const Categories = ({ categories, noWrap = false }: Props) => {
     return variant;
   };
   return (
-    <div className={clsx("flex w-[200px] flex-row gap-2", !noWrap && "flex-wrap")}>
+    <div className={cn("flex w-[200px] flex-row gap-2", !noWrap && "flex-wrap")}>
       {categories.map((item) => {
         const category = item.toLocaleLowerCase().trim().replaceAll(" ", "_").replaceAll("-", "_");
         const variant = getVariant(category);
