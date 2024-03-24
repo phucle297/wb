@@ -1,8 +1,8 @@
 import { nanoid } from "@reduxjs/toolkit";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { nestedLinkSchema, TLink } from "@wb/common/src/types/links";
 import { default as Logo } from "../assets/logo.png";
@@ -20,12 +20,19 @@ import { NavBarLinks } from "../configs/nav-bar";
 import { PATH } from "../configs/path";
 import { useCheckDarkMode } from "../hooks/useCheckDarkMode";
 import { useViewPortSize } from "../hooks/useViewPortSize";
+import { ENavBar, NavBarEnum } from "@fe-user/constant/nav-bar";
+import { cn } from "@wb/ui/src/libs/utils";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { width } = useViewPortSize();
   const [openMenu, setOpenMenu] = useState(false);
+  const [tabActive, setTabActive] = useState<ENavBar>(NavBarEnum.enum.home);
   const isDarkMode = useCheckDarkMode();
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setTabActive(pathname.split("/")[1].split("?")[0].replaceAll("-", "_").toLowerCase() as ENavBar);
+  }, [pathname]);
   return (
     <div className="container mx-auto flex h-full flex-1 items-center justify-between gap-x-2 px-4">
       <Link className="flex h-1/2 cursor-pointer items-center space-x-4" to={PATH.HOME}>
@@ -38,13 +45,19 @@ const Navbar = () => {
           {NavBarLinks.map((link: TLink) => {
             // check if link has children
             const { success } = nestedLinkSchema.safeParse(link);
-
             if (success) {
               const linkNested = nestedLinkSchema.parse(link);
               return (
                 <DropdownMenu key={nanoid()}>
                   <DropdownMenuTrigger>
-                    <span className="text-lg font-semibold transition-all duration-300 hover:text-[hsl(var(--primary))]">
+                    <span
+                      className={cn(
+                        "text-lg font-semibold transition-all duration-300 hover:text-[hsl(var(--primary))]",
+                        {
+                          ["text-[hsl(var(--primary))]"]: tabActive === link.link.slice(1).replaceAll("-", "_"),
+                        }
+                      )}
+                    >
                       {link.title}
                     </span>
                   </DropdownMenuTrigger>
@@ -70,7 +83,11 @@ const Navbar = () => {
             }
             return (
               <Link key={nanoid()} className="flex items-center gap-2" to={link.link}>
-                <span className="text-lg font-semibold transition-all duration-300 hover:text-[hsl(var(--primary))]">
+                <span
+                  className={cn("text-lg font-semibold transition-all duration-300 hover:text-[hsl(var(--primary))]", {
+                    ["text-[hsl(var(--primary))]"]: tabActive === link.link.slice(1).replaceAll("-", "_"),
+                  })}
+                >
                   {link.title}
                 </span>
               </Link>
@@ -146,7 +163,14 @@ const Navbar = () => {
                     }}
                   >
                     <Link className="flex items-center gap-2" to={link.link}>
-                      <span className="text-lg font-semibold transition-all duration-300 hover:text-[hsl(var(--primary))]">
+                      <span
+                        className={cn(
+                          "text-lg font-semibold transition-all duration-300 hover:text-[hsl(var(--primary))]",
+                          {
+                            ["text-[hsl(var(--primary))]"]: tabActive === link.link.slice(1).replaceAll("-", "_"),
+                          }
+                        )}
+                      >
                         {link.title}
                       </span>
                     </Link>
