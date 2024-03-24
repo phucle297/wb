@@ -15,12 +15,17 @@ const BlogItem = ({ blog }: Props) => {
 
   return (
     <button
-      className="grid grid-cols-1 grid-rows-[1fr-auto] items-start overflow-hidden rounded-lg border-2 bg-[hsl(var(--popover))] text-left 2xl:grid-cols-[250px_1fr]"
+      className="grid grid-cols-1 grid-rows-[1fr_auto] items-start overflow-hidden rounded-lg border-2 bg-[hsl(var(--popover))] text-left 2xl:grid-cols-[250px_1fr]"
       onClick={() => {
         navigate(`/blogs/${blog._id}`);
       }}
     >
-      <img src={blog.thumbnail} alt="thumbnail" className="block h-full w-full object-cover" />
+      <img
+        src={blog.thumbnail}
+        loading="lazy"
+        alt="thumbnail"
+        className="block h-48 w-full object-cover md:h-32 xl:h-48 2xl:h-full"
+      />
 
       <div className=" p-4">
         <h3 className="mb-1.5 line-clamp-2 text-xl font-bold 2xl:mb-3">{blog.title}</h3>

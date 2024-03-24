@@ -1,12 +1,11 @@
-import Title from "@wb/ui/src/components/title";
-import BlogItem from "./components/blog-item";
-import { Button } from "@wb/ui/src/components/ui/button";
-import { useLocation, useNavigate } from "react-router-dom";
-import { TBlog } from "@wb/common/src/types/blogs";
 import useCheckHomePage from "@fe-user/hooks/useCheckHomePage";
-import LayoutBlog from "../layout/layout-blog";
-import { useViewportSize } from "@mantine/hooks";
+import { TBlog } from "@wb/common/src/types/blogs";
+import Title from "@wb/ui/src/components/title";
+import { Button } from "@wb/ui/src/components/ui/button";
 import { cn } from "@wb/ui/src/libs/utils";
+import { useLocation, useNavigate } from "react-router-dom";
+import LayoutBlog from "../layout/layout-blog";
+import BlogItem from "./components/blog-item";
 
 interface IListBlogsProps {
   data: TBlog[];
@@ -26,7 +25,7 @@ const ListBlogs = ({ data }: IListBlogsProps) => {
 
         <div
           className={cn("mt-10 grid gap-8 md:grid-cols-3 2xl:grid-cols-2", {
-            ["md:grid-cols-4"]: pathname === "/",
+            ["xl:grid-cols-4"]: pathname === "/",
           })}
         >
           {data.map((blog) => {
