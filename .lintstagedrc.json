@@ -1,4 +1,4 @@
 {
-  "src/**/*.+(ts|tsx)": ["eslint --fix", "prettier --write"],
-  "src/**/*.md": ["prettier --write"]
+  "**/*.+(ts|tsx)": ["oxlint --fix", "prettier --write"],
+  "**/*.+(css|scss)": ["stylelint --fix", "prejson --write"]
 }
