@@ -15,7 +15,7 @@ const BlogItem = ({ blog }: Props) => {
 
   return (
     <button
-      className="grid grid-cols-1 grid-rows-[1fr_auto] items-start overflow-hidden rounded-lg border-2 bg-[hsl(var(--popover))] text-left 2xl:grid-cols-[250px_1fr]"
+      className="3xl:grid-cols-[250px_1fr] grid grid-cols-1 grid-rows-[1fr_auto] items-start overflow-hidden rounded-lg border-2 bg-[hsl(var(--popover))] text-left 2xl:grid-cols-[150px_1fr]"
       onClick={() => {
         navigate(`/blogs/${blog._id}`);
       }}
@@ -28,11 +28,11 @@ const BlogItem = ({ blog }: Props) => {
       />
 
       <div className=" p-4">
-        <h3 className="mb-1.5 line-clamp-2 text-xl font-bold 2xl:mb-3">{blog.title}</h3>
+        <h3 className="mb-1.5 line-clamp-1 text-xl font-bold 2xl:mb-3">{blog.title}</h3>
         <p className="mb-2 line-clamp-3 text-sm leading-4 opacity-70 2xl:mb-4">{blog.description}</p>
         <div className="-mb-3">
           <ScrollArea orientation="horizontal" className="pb-3">
-            <Types noWrap={width <= 1440} types={blog.tags as string[]} />
+            <Types noWrap={width < 1440} types={blog.tags as string[]} />
           </ScrollArea>
         </div>
       </div>

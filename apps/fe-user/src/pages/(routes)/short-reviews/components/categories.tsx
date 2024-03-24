@@ -109,7 +109,7 @@ const Categories = ({ categories, noWrap = false }: Props) => {
     return variant;
   };
   return (
-    <div className={cn("flex w-[200px] flex-row gap-2", !noWrap && "flex-wrap")}>
+    <div className={cn("flex w-full flex-row gap-2", !noWrap && "flex-wrap")}>
       {categories.map((item) => {
         const category = item.toLocaleLowerCase().trim().replaceAll(" ", "_").replaceAll("-", "_");
         const variant = getVariant(category);

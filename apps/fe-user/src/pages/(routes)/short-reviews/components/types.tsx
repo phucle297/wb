@@ -38,7 +38,7 @@ const Types = ({ types, className, noWrap }: Props) => {
     return variant;
   };
   return (
-    <div className={cn("flex w-[200px] flex-row gap-2", className, !noWrap && "flex-wrap")}>
+    <div className={cn("flex w-full flex-row gap-2", className, !noWrap && "flex-wrap")}>
       {types.map((item) => {
         const type = item.toLocaleLowerCase().trim().replaceAll(" ", "_");
         const variant = getVariant(type);
