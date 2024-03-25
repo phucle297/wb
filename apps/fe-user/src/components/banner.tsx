@@ -18,7 +18,7 @@ const Banner = ({ title, subtitle, img, grayscale }: Props) => {
         backgroundBlendMode: "multiply",
       }}
     >
-      <h1 className="text-4xl font-bold tracking-wider">{title}</h1>
+      <h1 className="text-4xl font-bold tracking-wider text-white">{title}</h1>
       {subtitle && <p className="tracking-wide">{subtitle}</p>}
     </div>
   );
