@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "oxlint && eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write ./**/*.{ts,tsx,css,json} --config ./.prettierrc",
     "prepare": "husky install",
     "fe-user": "pnpm --filter fe-user",
