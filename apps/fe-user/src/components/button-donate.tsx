@@ -9,7 +9,7 @@ type Props = {
 const ButtonDonate = ({ className }: Props) => {
   return (
     <Button
-      className={clsx(className, "mt-4 flex gap-2")}
+      className={clsx(className, "mt-4 max-w-full gap-2 text-wrap")}
       onClick={() => {
         window.open("https://ko-fi.com/weeboo");
       }}

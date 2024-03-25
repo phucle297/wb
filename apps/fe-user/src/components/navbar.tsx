@@ -40,7 +40,7 @@ const Navbar = () => {
           <img alt="logo" className="h-full" src={Logo} />
         </h1>
       </Link>
-      {width >= 768 && (
+      {width > 768 && (
         <div className="group flex items-center gap-6">
           {NavBarLinks.map((link: TLink) => {
             // check if link has children
@@ -100,7 +100,7 @@ const Navbar = () => {
         <ThemeColors />
         <ThemeToggle />
 
-        {width < 768 && (
+        {width <= 768 && (
           <DropdownMenu open={openMenu} onOpenChange={setOpenMenu}>
             <DropdownMenuTrigger asChild>
               <Button size="icon" variant="outline">

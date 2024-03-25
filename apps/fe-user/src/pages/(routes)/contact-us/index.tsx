@@ -1,5 +1,6 @@
 import { default as ContactUsImg } from "@fe-user/assets/contact-us.jpeg";
 import Banner from "@fe-user/components/banner";
+import CollideBalls from "@fe-user/components/collide-balls";
 import Title from "@ui/components/title";
 
 const ContactUs = () => {
@@ -7,7 +8,7 @@ const ContactUs = () => {
     <div>
       <Banner subtitle="Feedback? Questions? Let Us Know!" title="CONTACT US" img={ContactUsImg} grayscale />
 
-      <div className=" min-h-72">
+      <div className="min-h-72">
         <div className="container py-10">
           <Title linePosition="center" text="GET IN TOUCH" textPosition="center" />
           <p className="mt-12 text-center">
@@ -23,6 +24,7 @@ const ContactUs = () => {
           </p>
         </div>
       </div>
+      <CollideBalls />
     </div>
   );
 };

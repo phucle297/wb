@@ -14,7 +14,10 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "2rem",
+        sm: "0.5rem",
+      },
       screens: {
         sm: "540px",
         md: "640px",

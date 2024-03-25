@@ -21,7 +21,7 @@ const Footer: FC = () => {
         <div className="flex flex-col items-center justify-center">
           <Link className="flex w-1/2 cursor-pointer items-center space-x-4 " to={PATH.HOME}>
             <h1 className={clsx("h-full text-2xl font-semibold", { invert: isDarkMode })}>
-              <img alt="logo" className="h-full" src={Logo} />
+              <img alt="logo" src={Logo} />
             </h1>
           </Link>
         </div>
@@ -58,7 +58,7 @@ const Footer: FC = () => {
         </div>
         <div className="">
           <h3 className="mb-2 text-xl font-bold">Categories</h3>
-          <div className="flex flex-col gap-2">
+          <div className="flex w-full flex-col gap-2">
             {getRandomItemsInArray(
               CATEGORIES.sort((a, b) => a.localeCompare(b)).filter(
                 (category: string) =>

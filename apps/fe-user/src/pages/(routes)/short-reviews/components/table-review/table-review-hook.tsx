@@ -147,13 +147,17 @@ export const useTableReview = () => {
       cell: ({ row }) => {
         const data = row.original;
         const categories = data.categories.split(",");
-        return <Categories categories={categories} />;
+        return (
+          <div className="w-[200px]">
+            <Categories categories={categories} />
+          </div>
+        );
       },
     },
     {
       accessorKey: "writer",
       header: () => {
-        return <p className="w-[100px]  border-r-2">Writer</p>;
+        return <p className="w-[100px] border-r-2">Writer</p>;
       },
       cell: ({ row }) => {
         const data = row.original;

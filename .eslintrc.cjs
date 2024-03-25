@@ -14,7 +14,7 @@ module.exports = {
   },
   ignorePatterns: ["dist", ".eslintrc.cjs", "postcss.config.js"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "react", "simple-import-sort", "import", "react-hooks", "prettier"],
+  plugins: ["react-refresh", "react", "simple-import-sort", "import", "prettier", "plugin:oxlint/recommended"],
   rules: {
     "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     // fix props passing cannot find

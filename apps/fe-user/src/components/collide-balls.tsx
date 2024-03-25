@@ -45,6 +45,7 @@ const CollideBalls = () => {
     const svg = d3
       .select(refWrapper.current)
       .append("svg")
+      .attr("overflow", "visible")
       .attr("width", width - 10)
       .attr("height", height);
 

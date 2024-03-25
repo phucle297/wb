@@ -4,7 +4,6 @@ import { Badge } from "@ui/components/ui/badge";
 import { TBadgeColor } from "@wb/common/src/types/colors";
 import { typesSchema } from "@wb/common/src/types/types";
 import { cn } from "@wb/ui/src/libs/utils";
-import { ScrollArea } from "@wb/ui/src/components/ui/scroll-area";
 
 type Props = {
   types: string[];
