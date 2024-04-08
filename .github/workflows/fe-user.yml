@@ -47,4 +47,4 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync apps/fe-user/dist s3://fe-user-bucket
+          aws s3 sync dist s3://www.weeb.wiki
