@@ -6,22 +6,26 @@ on:
       - master
 
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [15]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: 20
-          cache: '.pnpm'
-          cache-dependency-path: './apps/fe-user/package.json'
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+          cache-dependency-path: "./apps/fe-user/package.json"
 
       - name: Build apps/fe-user
         run: |
-          corepack enable
           pnpm install --frozen-lockfile --ignore-scripts
           pnpm --filter="fe-user" build
 
