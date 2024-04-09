@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  build_and_deploy:
-    name: Build and Deploy
+  build:
+    name: Build and
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,6 +28,24 @@ jobs:
         run: |
           pnpm install --frozen-lockfile --ignore-scripts
           pnpm --filter="fe-user" build
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fe-user
+          path: apps/fe-user/dist
+
+  deploy:
+    name: Deploy to S3
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download production artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: fe-user
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -40,5 +58,5 @@ jobs:
           CLOUDFRONT_ID: ${{ secrets.CLOUDFRONT_ID }}
         run: |
           aws s3 rm s3://www.weeb.wiki --recursive --only-show-errors
-          aws s3 cp ./apps/fe-user/dist s3://www.weeb.wiki --recursive --only-show-errors --cache-control max-age=180
+          aws s3 cp . s3://www.weeb.wiki --recursive --only-show-errors --cache-control max-age=180
           aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
