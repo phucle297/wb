@@ -39,8 +39,6 @@ jobs:
         env:
           CLOUDFRONT_ID: ${{ secrets.CLOUDFRONT_ID }}
         run: |
-          pnpm install --frozen-lockfile --ignore-scripts
-          pnpm --filter="fe-user" build
           aws s3 rm s3://www.weeb.wiki --recursive --only-show-errors
           aws s3 cp ./apps/fe-user/dist s3://www.weeb.wiki --recursive --only-show-errors --cache-control max-age=180
           aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
